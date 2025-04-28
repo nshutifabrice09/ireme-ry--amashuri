@@ -1,2 +1,15 @@
-package com.backend.ireme_ry._amashuri.dto.response;public class AuthenticationResponse {
+package com.backend.ireme_ry._amashuri.dto.response;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class AuthenticationResponse {
+
+    private String token;
 }
