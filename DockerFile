@@ -1,0 +1,4 @@
+FROM openjdk:17-jdk-alpine
+ARG JAR_FIle=target/*jar.
+#COPY
+ENTRYPOINT ["java","-jar","app.jar"]
