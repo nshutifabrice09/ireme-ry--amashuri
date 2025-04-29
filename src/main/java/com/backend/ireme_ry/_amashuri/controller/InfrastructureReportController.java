@@ -27,4 +27,20 @@ public class InfrastructureReportController {
     public List<InfrastructureReport> infrastructureReportList(){
         return infrastructureReportService.getAllInfrastructureReports();
     }
+
+    @GetMapping("/infrastructureReport/{id}")
+    public InfrastructureReport getInfrastructureReportById(@PathVariable ("id") Long id){
+        return infrastructureReportService.getInfrastructureReportById(id);
+    }
+
+    @PutMapping("/update/infrastructureReport/{id}")
+    public InfrastructureReport updateInfrastructureReport(@PathVariable ("id") Long id, @RequestBody InfrastructureReport infrastructureReport){
+        return infrastructureReportService.updateInfrastructureReport(id, infrastructureReport);
+    }
+
+    @DeleteMapping("/delete/infrastructureReports/{id}")
+    public void deleteInfrastructureById(@PathVariable ("id") Long id){
+        infrastructureReportService.deleteInfrastructureById(id);
+    }
+
 }
