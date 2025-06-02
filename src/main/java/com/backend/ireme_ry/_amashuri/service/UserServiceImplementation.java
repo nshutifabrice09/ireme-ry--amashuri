@@ -29,16 +29,24 @@ public class UserServiceImplementation implements UserService{
 
     @Override
     public User saveUser(User user) {
-        return null;
+        return userRepository.save(user);
     }
 
     @Override
     public User updateUser(Long id, User user) {
+        User existUser = userRepository.findUserById(id);
+        if(existUser != null){
+            existUser.setName(user.getName());
+            existUser.setEmail(user.getEmail());
+            existUser.setPassword(user.getPassword());
+            existUser.setRole(user.getRole());
+            return userRepository.save(existUser);
+        }
         return null;
     }
 
     @Override
     public void deleteUserById(Long id) {
-
+        userRepository.deleteById(id);
     }
 }
