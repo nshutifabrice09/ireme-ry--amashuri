@@ -7,7 +7,7 @@ import java.util.List;
 public interface InfrastructureReportService {
     List<InfrastructureReport> getAllInfrastructureReports();
     InfrastructureReport getInfrastructureReportById(Long id);
-    InfrastructureReport saveInfrastructureReport (InfrastructureReport infrastructureReport);
+    InfrastructureReport saveInfrastructureReport (InfrastructureReport infrastructureReport, Long schoolId);
     InfrastructureReport updateInfrastructureReport (Long id, InfrastructureReport infrastructureReport);
     void deleteInfrastructureById (Long id);
 }
