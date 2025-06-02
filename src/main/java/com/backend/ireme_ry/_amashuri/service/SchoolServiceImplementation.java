@@ -38,8 +38,9 @@ public class SchoolServiceImplementation implements SchoolService{
     public School saveSchool(School school, Long districtId, Long headteacherId) {
         District district = districtRepository.findDistrictById(districtId);
         User user = userRepository.findUserById(headteacherId);
-        
-        return null;
+        school.setDistrictId(district);
+        school.setHeadteacher(user);
+        return schoolRepository.save(school);
     }
 
     @Override
