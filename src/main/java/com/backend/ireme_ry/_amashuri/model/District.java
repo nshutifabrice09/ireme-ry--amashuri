@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Table(name = "districts")
 @Builder
@@ -16,6 +18,17 @@ public class District {
     private Long id;
     private String name;
     private String province;
+
+    public List<School> getSchools() {
+        return schools;
+    }
+
+    public void setSchools(List<School> schools) {
+        this.schools = schools;
+    }
+
+    @OneToMany(mappedBy = "district", cascade = CascadeType.ALL)
+    private List<School> schools;
 
     public Long getId() {
         return id;

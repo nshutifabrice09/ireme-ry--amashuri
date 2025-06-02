@@ -22,6 +22,9 @@ public class School {
     private Double latitude;
     private Double longitude;
     @ManyToOne
+    @JoinColumn(name = "district_id")
+    private District districtId;
+    @ManyToOne
     @JoinColumn(name = "headteacher_id")
     private User headteacher;
 
@@ -87,5 +90,13 @@ public class School {
 
     public void setHeadteacher(User headteacher) {
         this.headteacher = headteacher;
+    }
+
+    public District getDistrictId() {
+        return districtId;
+    }
+
+    public void setDistrictId(District districtId) {
+        this.districtId = districtId;
     }
 }
