@@ -18,10 +18,6 @@ public class SchoolController {
         this.schoolService = schoolService;
     }
 
-    @PostMapping("/school")
-    public School saveSchool(@RequestBody School school){
-        return schoolService.saveSchool(school);
-    }
 
     @GetMapping("/schools")
     public List <School> schoolList(){

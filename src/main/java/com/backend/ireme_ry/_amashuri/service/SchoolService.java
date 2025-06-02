@@ -7,7 +7,7 @@ import java.util.List;
 public interface SchoolService {
     List<School> getAllSchools();
     School getSchoolById(Long id);
-    School saveSchool (School school);
+    School saveSchool (School school, Long districtId, Long headteacherId);
     School updateSchool (Long id, School school);
     void deleteSchoolById(Long id);
 }
