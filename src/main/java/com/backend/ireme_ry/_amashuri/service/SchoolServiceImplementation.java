@@ -45,6 +45,16 @@ public class SchoolServiceImplementation implements SchoolService{
 
     @Override
     public School updateSchool(Long id, School school) {
+        School existSchool = schoolRepository.findSchoolById(id);
+        if(existSchool != null){
+            existSchool.setName(school.getName());
+            existSchool.setSector(school.getSector());
+            existSchool.setDistrict(school.getDistrict());
+            existSchool.setProvince(school.getProvince());
+            existSchool.setLatitude(school.getLatitude());
+            existSchool.setLongitude(school.getLongitude());
+            return schoolRepository.save(existSchool);
+        }
         return null;
     }
 
