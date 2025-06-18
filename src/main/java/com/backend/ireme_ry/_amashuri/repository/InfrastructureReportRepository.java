@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface InfrastructureReportRepository extends JpaRepository <InfrastructureReport, Long> {
+    InfrastructureReport findInfrastructureReportById(Long id);
 }

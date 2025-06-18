@@ -18,6 +18,11 @@ public class SchoolController {
         this.schoolService = schoolService;
     }
 
+    @PostMapping("/school/{districtId}/{headteacherId}")
+    public School saveSchool(@RequestBody School school, @PathVariable ("districtId") Long districtId,
+                             @PathVariable ("headteacherId") Long headteacherId){
+        return schoolService.saveSchool(school, districtId, headteacherId);
+    }
 
     @GetMapping("/schools")
     public List <School> schoolList(){
