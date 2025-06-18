@@ -1,6 +1,8 @@
 package com.backend.ireme_ry._amashuri.controller;
 
 import com.backend.ireme_ry._amashuri.model.School;
+import com.backend.ireme_ry._amashuri.repository.DistrictRepository;
+import com.backend.ireme_ry._amashuri.repository.UserRepository;
 import com.backend.ireme_ry._amashuri.service.SchoolService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -12,10 +14,14 @@ import java.util.List;
 public class SchoolController {
 
     private final SchoolService schoolService;
+    private final DistrictRepository districtRepository;
+    private final UserRepository userRepository;
 
     @Autowired
-    public SchoolController(SchoolService schoolService){
+    public SchoolController(SchoolService schoolService, DistrictRepository districtRepository, UserRepository userRepository){
         this.schoolService = schoolService;
+        this.districtRepository = districtRepository;
+        this.userRepository = userRepository;
     }
 
 
