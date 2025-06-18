@@ -18,7 +18,11 @@ public class InfrastructureReportController {
         this.infrastructureReportService = infrastructureReportService;
     }
 
-
+    @PostMapping("/infrastructureReport/{schoolId}")
+    public InfrastructureReport saveInfrastructureReport(@RequestBody InfrastructureReport infrastructureReport,
+                                                         @PathVariable ("schoolId") Long schoolId){
+        return infrastructureReportService.saveInfrastructureReport(infrastructureReport, schoolId);
+    }
 
     @GetMapping("/infrastructureReports")
     public List<InfrastructureReport> infrastructureReportList(){
