@@ -1,2 +1,4 @@
-package com.backend.ireme_ry._amashuri.service;public interface AuthenticationReportService {
+package com.backend.ireme_ry._amashuri.service;
+
+public interface AuthenticationReportService {
 }
