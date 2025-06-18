@@ -29,10 +29,6 @@ public class AuthenticationReport {
     @JoinColumn(name = "school_id", nullable = false)
     private School school;
 
-    // Optional: If reports are submitted by users
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
 
     public Long getId() {
         return id;
@@ -82,11 +78,4 @@ public class AuthenticationReport {
         this.school = school;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
 }
