@@ -11,7 +11,7 @@ import java.util.List;
 @CrossOrigin("http://localhost:3000")
 public class UserController {
 
-    private UserService userService;
+    private final UserService userService;
 
     @Autowired
     public UserController(UserService userService){

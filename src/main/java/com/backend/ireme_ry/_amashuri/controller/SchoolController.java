@@ -11,7 +11,7 @@ import java.util.List;
 @CrossOrigin("http://localhost:3000")
 public class SchoolController {
 
-    private SchoolService schoolService;
+    private final SchoolService schoolService;
 
     @Autowired
     public SchoolController(SchoolService schoolService){
